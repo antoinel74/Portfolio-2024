@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { fetchProjects } from "@/sanity/sanity-utils";
-import { Header } from "./components/Header";
+import { Header } from "./components/header/Header";
 
 export default async function Home() {
   const projects = await fetchProjects();
