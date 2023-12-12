@@ -3,7 +3,7 @@ import SectionTitle from "./SectionTitle";
 
 export const Header = () => {
   return (
-    <div className="flex flex-wrap flex-col relative min-h-screen items-center justify-center">
+    <section className="flex flex-wrap flex-col relative min-h-screen items-center justify-center bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black">
       <SectionTitle
         title="Open to work !"
         busy={false}
@@ -33,6 +33,6 @@ export const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
