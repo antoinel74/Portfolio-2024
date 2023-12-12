@@ -4,11 +4,17 @@ interface SectionTitleProps {
   title: string;
   svg: boolean;
   busy: boolean;
+  className: string;
 }
 
-const SectionTitle: FC<SectionTitleProps> = ({ title, svg, busy }) => {
+const SectionTitle: FC<SectionTitleProps> = ({
+  title,
+  svg,
+  busy,
+  className,
+}) => {
   return (
-    <div className="flex items-center gap-2 font-thin">
+    <div className={`flex items-center gap-2 font-thin ${className}`}>
       {svg ? (
         <img src="#" alt="blabla" />
       ) : (
