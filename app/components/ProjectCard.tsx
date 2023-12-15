@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { ProjectData } from "../types";
+import { ProjectData } from "../../types/types";
 
 interface ProjectCardProps {
   data: ProjectData;
