@@ -1,15 +1,15 @@
-@keyframes blink {
+@keyframes scrollDownAnimation {
   0% {
-    opacity: 1;
+    height: 4px;
   }
   50% {
-    opacity: 0;
+    height: 3rem;
   }
   100% {
-    opacity: 1;
+    height: 4px;
   }
 }
 
-.blink {
-  animation: blink 1s infinite;
+.scrollDownAnimation {
+  animation: scrollDownAnimation 3s ease-in-out infinite;
 }
