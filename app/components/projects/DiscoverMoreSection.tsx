@@ -1,5 +1,4 @@
 import React from "react";
-import { SectionTitle } from "../SectionTitle";
 import { ProjectsList } from "./ProjectsList";
 import { ProjectData } from "@/types/types";
 
@@ -10,10 +9,9 @@ interface DiscoverMoreSectionProps {
 const DiscoverMoreSection: React.FC<DiscoverMoreSectionProps> = ({ data }) => {
   return (
     <section className="w-full min-h-screen flex flex-col justify-center relative px-6">
-      <SectionTitle title="discover more" busy={true} svg={true} className="absolute top-24 left-[5%]" />
-      <div>
-        <ProjectsList /* data={data}  */ />
-      </div>
+      {/*     <div>
+        <ProjectsList />
+      </div> */}
     </section>
   );
 };

@@ -1,8 +1,7 @@
 import { Header } from "./components/header/Header";
 import { promises as fs } from "fs";
 import { ProjectData } from "../types/types";
-import SelectedWorksSection from "./components/projects/SelectedWorksSection";
-import DiscoverMoreSection from "./components/projects/DiscoverMoreSection";
+import { ProjectsGrid } from "./components/projects/ProjectsGrid";
 import { Contact } from "./components/contact/Contact";
 
 export default async function Home() {
@@ -12,8 +11,7 @@ export default async function Home() {
   return (
     <main>
       <Header />
-      <SelectedWorksSection data={data} limit={2} />
-      <DiscoverMoreSection data={data} />
+      <ProjectsGrid data={data} limit={2} />
       <Contact />
     </main>
   );
