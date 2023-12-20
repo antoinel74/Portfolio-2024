@@ -1,20 +1,37 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import { ProjectData } from "@/types/types";
+import { Button } from "../Button";
 
-interface SelectedWorksSectionProps {
+interface ProjectsGridProps {
   data: ProjectData[];
-  limit: number;
 }
 
-export const ProjectsGrid: React.FC<SelectedWorksSectionProps> = ({ data, limit }) => {
-  const limitedData = data.slice(0, limit);
+const cardGridPositions = (index: number): string => {
+  switch (index) {
+    case 0:
+      return "col-span-3";
+    case 1:
+      return "col-span-2 col-start-4";
+    case 2:
+      return "col-span-2 row-start-2";
+    case 3:
+      return "col-span-3 col-start-3 row-start-2";
+    default:
+      return "";
+  }
+};
+
+export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ data }) => {
+  const limitedData = data.slice(0, 4);
 
   return (
-    <section className="w-full min-h-screen flex flex-col relative px-6 lg:px-24 ">
-      <div className="flex flex-col md:flex-row w-full gap-6 lg:gap-12 ">
+    <section className="w-full min-h-screen flex flex-col relative">
+      <div className="grid grid-cols-5 grid-rows-2 gap-4 mb-4">
         {limitedData.map((item, index) => (
-          <ProjectCard key={index} data={item} />
+          <div key={index} className={cardGridPositions(index)}>
+            <ProjectCard key={index} data={item} />
+          </div>
         ))}
       </div>
     </section>

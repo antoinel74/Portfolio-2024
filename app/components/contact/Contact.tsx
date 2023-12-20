@@ -1,27 +1,39 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { TextScrollingBanner } from "../TextScrollingBanner";
 
 export const Contact = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center px-6 lg:px-36">
-      <div className="flex flex-col justify-center items-center gap-4 min-h-[60vh] border border-gray-400 rounded-xl uppercase tracking-widest opacity-80 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-rose-400 via-black to-black">
-        <h2>Let's connect ! </h2>
-        <p className="text-2xl lg:text-4xl font-bold">Write me a message </p>
-        <figure className="flex items-center justify-center border rounded-full h-20 w-20 mt-12">
-          <Image src="/svg/arrow-bottom-left-large.svg" alt="svg" height={40} width={40} />
-        </figure>
-      </div>
-      <div className="w-full flex justify-between pt-4 uppercase text-sm px-1">
-        <span>A. Lansman - 2023</span>
-        <ul className="flex gap-6">
+    <section className="min-h-[60vh] flex flex-col  overflow-hidden px-4 md:px-0 pt-6 pb-12">
+      <TextScrollingBanner />
+      <div className="flex justify-end items-center flex-col-reverse md:flex-row w-full gap-8 py-6">
+        <ul className="w-full md:w-1/2 flex flex-col md:items-center">
           <li>
-            <Link href="https://linkedin.com">Linkedin</Link>
-          </li>
-          <li>
-            <Link href="https://github.com">Github</Link>
+            <span className="font-semibold opacity-80">Useful Links:</span>
+            <ul className="mt-4 flex flex-col gap-1">
+              <li>
+                <a href="https://github.com/antoinel74">Github</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/antoinelsm/">Linkedin</a>
+              </li>
+              <li>
+                <a href="https://spotify.com">Spotify Work Playlist</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/antoinelsm/">Instagram</a>
+              </li>
+            </ul>
           </li>
         </ul>
+        <div className="w-full md:w-1/2">
+          <p className="flex flex-col text-3xl md:text-4xl font-semibold">
+            Let&apos;s Connect !<span>Write me a message</span>
+          </p>
+          <Link href="/" className="text-2xl md:text-3xl font-thin">
+            antoine.lansman@gmail.com
+          </Link>
+        </div>
       </div>
     </section>
   );
