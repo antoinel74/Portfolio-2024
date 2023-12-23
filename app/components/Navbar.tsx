@@ -5,14 +5,13 @@ import { gsap } from "gsap";
 
 export const Navbar = () => {
   useEffect(() => {
-    const tl = gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } });
-    tl.set("nav", { opacity: 0, y: -100 });
+    const tl = gsap.timeline({ defaults: { duration: 2, ease: "power3.out" } });
+    tl.set("nav", { opacity: 0, y: -50 });
 
     tl.to("nav", {
       opacity: 1,
       stagger: { each: 0.06 },
       y: 0,
-      delay: 0.8,
     });
   }, []);
 
