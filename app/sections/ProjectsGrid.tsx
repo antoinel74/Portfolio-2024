@@ -25,7 +25,7 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ data }) => {
   const limitedData = data.slice(0, 4);
 
   return (
-    <section className="w-full min-h-screen flex flex-col relative">
+    <section className="w-full min-h-screen flex flex-col relative" data-scroll-section>
       <div className="grid grid-cols-5 grid-rows-2 gap-4 mb-4">
         {limitedData.map((item, index) => (
           <div key={index} className={cardGridPositions(index)}>

@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Header } from "./sections/Header";
 import { promises as fs } from "fs";
 import { ProjectData } from "./types/types";
@@ -10,7 +11,7 @@ export default async function Home() {
   const data: ProjectData[] = JSON.parse(file);
 
   return (
-    <main className="px-6">
+    <main className="px-6" data-scroll-container id="main-container">
       <Header />
       <ProjectsGrid data={data} />
       <Button link="/projects/1" linkText="Learn more ->" />

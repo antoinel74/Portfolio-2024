@@ -4,7 +4,7 @@ import { MarqueeText } from "../components/Marquee";
 
 export const Contact = () => {
   return (
-    <section className="min-h-[60vh] flex flex-col overflow-hidden px-4 py-12 gap-6 md:gap-12">
+    <section className="min-h-[60vh] flex flex-col overflow-hidden px-4 py-12 gap-6 md:gap-12" id="contact">
       <MarqueeText content={"Let's connect"} />
       <div className="flex justify-end items-center flex-col-reverse md:flex-row w-full gap-8 py-6 mb-6">
         <ul className="w-full md:w-1/2 flex flex-col md:items-center">
