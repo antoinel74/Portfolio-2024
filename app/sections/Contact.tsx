@@ -1,27 +1,27 @@
 import React from "react";
 import Link from "next/link";
-import { TextScrollingBanner } from "../TextScrollingBanner";
+import { MarqueeText } from "../components/Marquee";
 
 export const Contact = () => {
   return (
-    <section className="min-h-[60vh] flex flex-col  overflow-hidden px-4 md:px-0 pt-6 pb-12">
-      <TextScrollingBanner />
-      <div className="flex justify-end items-center flex-col-reverse md:flex-row w-full gap-8 py-6">
+    <section className="min-h-[60vh] flex flex-col overflow-hidden px-4 py-12 gap-6 md:gap-12">
+      <MarqueeText content={"Let's connect"} />
+      <div className="flex justify-end items-center flex-col-reverse md:flex-row w-full gap-8 py-6 mb-6">
         <ul className="w-full md:w-1/2 flex flex-col md:items-center">
           <li>
             <span className="font-semibold opacity-80">Useful Links:</span>
             <ul className="mt-4 flex flex-col gap-1">
               <li>
-                <a href="https://github.com/antoinel74">Github</a>
+                <Link href="https://github.com/antoinel74">Github</Link>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/antoinelsm/">Linkedin</a>
+                <Link href="https://www.linkedin.com/in/antoinelsm/">Linkedin</Link>
               </li>
               <li>
-                <a href="https://spotify.com">Spotify Work Playlist</a>
+                <Link href="https://spotify.com">Spotify Work Playlist</Link>
               </li>
               <li>
-                <a href="https://www.instagram.com/antoinelsm/">Instagram</a>
+                <Link href="https://www.instagram.com/antoinelsm/">Instagram</Link>
               </li>
             </ul>
           </li>

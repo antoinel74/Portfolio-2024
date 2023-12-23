@@ -8,8 +8,8 @@ interface ButtonProps {
 
 export const Button: React.FC<ButtonProps> = ({ linkText, link }) => {
   return (
-    <Link href={link}>
-      <button className="py-3 px-5 bg-fadeGray rounded-full">{linkText}</button>
+    <Link href={link} className="py-3 px-5 bg-fadeGray rounded-full">
+      {linkText}
     </Link>
   );
 };

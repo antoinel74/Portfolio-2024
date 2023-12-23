@@ -1,7 +1,7 @@
 import React from "react";
-import { TitleBlock } from "./TitleBlock";
-import { DescriptionBlock } from "./DescriptionBlock";
-import { ScrollDown } from "./ScrollDown";
+import { TitleBlock } from "../components/TitleBlock";
+import { DescriptionBlock } from "../components/DescriptionBlock";
+import { ScrollDown } from "../components/ScrollDown";
 
 export const Header = () => {
   return (

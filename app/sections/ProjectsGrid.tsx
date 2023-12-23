@@ -1,7 +1,7 @@
 import React from "react";
-import ProjectCard from "./ProjectCard";
-import { ProjectData } from "@/types/types";
-import { Button } from "../Button";
+import ProjectCard from "../components/ProjectCard";
+import { ProjectData } from "@/app/types/types";
+import { Button } from "../components/Button";
 
 interface ProjectsGridProps {
   data: ProjectData[];
