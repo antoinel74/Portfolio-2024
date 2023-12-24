@@ -1,10 +1,35 @@
-import React from "react";
+"use client";
+import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import { MarqueeText } from "../components/Marquee";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const Contact = () => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    gsap.fromTo(
+      el,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: el,
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section className="min-h-[60vh] flex flex-col overflow-hidden px-4 py-12 gap-6 md:gap-12" id="contact">
+    <section className="min-h-[60vh] flex flex-col overflow-hidden px-4 py-12 gap-6 md:gap-12" id="contact" ref={ref}>
       <MarqueeText content={"Let's connect"} />
       <div className="flex justify-end items-center flex-col-reverse md:flex-row w-full gap-8 py-6 mb-6">
         <ul className="w-full md:w-1/2 flex flex-col md:items-center">
@@ -30,9 +55,9 @@ export const Contact = () => {
           <p className="flex flex-col text-3xl md:text-4xl font-semibold">
             Let&apos;s Connect !<span>Write me a message</span>
           </p>
-          <Link href="/" className="text-2xl md:text-3xl font-thin">
+          <a href="mailto:antoinelansman@gmail.com" className="text-2xl md:text-3xl font-thin">
             antoine.lansman@gmail.com
-          </Link>
+          </a>
         </div>
       </div>
     </section>

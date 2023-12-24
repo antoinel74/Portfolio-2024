@@ -1,34 +1,38 @@
 [
   {
     "id": 1,
-    "name": "COGIP",
-    "stack": ["React", "Javascript", "GSAP"],
-    "description": "An invoices management solution",
-    "date": "2023",
-    "link": "https://yourcogipprojectlink.com"
-  },
-  {
-    "id": 2,
     "name": "Netflix Clone",
     "stack": ["React", "Typescript", "NextJS"],
     "description": "A clone of the Netflix platform",
     "date": "2023",
-    "link": "https://yournetflixclonelink.com"
+    "link": "https://yournetflixclonelink.com",
+    "img": "/projects/netflix.webp"
   },
+  {
+    "id": 2,
+    "name": "COGIP",
+    "stack": ["React", "Javascript", "GSAP"],
+    "description": "An invoices management solution",
+    "date": "2023",
+    "link": "https://yourcogipprojectlink.com",
+    "img": "/projects/abstract.webp"
+  },
+
   {
     "id": 3,
-    "name": "Studio 44",
-    "stack": ["HTML", "SCSS", "Javascript", "GSAP"],
-    "description": "A landing page for a fictional music studio",
-    "date": "2023",
-    "link": "https://yourstudio44link.com"
-  },
-  {
-    "id": 4,
     "name": "Weather app",
     "stack": ["HTML", "Javascript", "PHP"],
     "description": "A weather app built using OpenWeather API",
     "date": "2023",
-    "link": "https://yourweatherapplink.com"
+    "img": "/projects/weather.webp"
+  },
+  {
+    "id": 4,
+    "name": "Studio 44",
+    "stack": ["HTML", "SCSS", "Javascript", "GSAP"],
+    "description": "A landing page for a fictional music studio",
+    "date": "2023",
+    "link": "https://yourstudio44link.com",
+    "img": "/projects/studio44.webp"
   }
 ]
