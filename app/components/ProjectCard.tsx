@@ -21,9 +21,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
 
     gsap.fromTo(
       el,
-      { scale: 0 },
+      { scale: 0.7, opacity: 0 },
       {
         scale: 1,
+        opacity: 1,
         duration: 1,
         scrollTrigger: {
           trigger: el,
