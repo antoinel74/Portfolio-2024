@@ -25,7 +25,7 @@ export const Header = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[95vh] w-full overflow-hidden bg-[#161616]">
+    <section className="relative min-h-[95vh] w-full overflow-hidden">
       <div className="absolute top-1/4 md:top-1/2 w-full flex flex-col md:flex-row-reverse gap-6 md:gap-0 flex-wrap">
         <TitleBlock ref={titleRef} />
         <DescriptionBlock ref={descriptionRef} />

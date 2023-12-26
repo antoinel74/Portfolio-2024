@@ -5,4 +5,5 @@ export interface ProjectData {
   stack: string[];
   description: string;
   date: string;
+  link: string;
 }

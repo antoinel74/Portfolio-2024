@@ -14,18 +14,44 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const cursor = cursorRef.current;
 
+    // "See Project" hover
+    el.addEventListener("mouseenter", () => {
+      if (cursor) {
+        gsap.to(cursor, {
+          duration: 0.5,
+          opacity: 1,
+          scale: 1.2,
+          ease: "elastic",
+        });
+      }
+    });
+
+    el.addEventListener("mouseleave", () => {
+      if (cursor) {
+        gsap.to(cursor, {
+          duration: 0.5,
+          opacity: 0,
+          scale: 1,
+          ease: "elastic",
+        });
+      }
+    });
+
+    // Reveal animation
     gsap.fromTo(
       el,
       { scale: 0.7, opacity: 0 },
       {
         scale: 1,
         opacity: 1,
-        duration: 1,
+        duration: 0.9,
         scrollTrigger: {
           trigger: el,
         },
@@ -34,7 +60,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
   }, []);
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden relative ">
+      <div
+        className="pointer-events-none opacity-0 z-50 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black font-light w-28 h-28 flex justify-center items-center"
+        ref={cursorRef}
+      >
+        <span>See Project</span>
+      </div>
       <Link href={`/projects/${data.id}`}>
         <figure className="relative aspect-w-3 aspect-h-4 w-full min-h-[400px] rounded-md" ref={ref}>
           <Image src={data.img} alt={data.name} fill className="rounded-md w-full h-full object-cover" />

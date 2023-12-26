@@ -5,6 +5,7 @@ import { ProjectData } from "./types/types";
 import { ProjectsGrid } from "./sections/ProjectsGrid";
 import { Button } from "./components/Button";
 import { Contact } from "./sections/Contact";
+import { Footer } from "./components/Footer";
 
 export default async function Home() {
   const file = await fs.readFile(process.cwd() + "/app/data/data.json", "utf-8");
@@ -16,6 +17,7 @@ export default async function Home() {
       <ProjectsGrid data={data} />
       <Button link="/projects/1" linkText="Learn more ->" />
       <Contact />
+      <Footer />
     </main>
   );
 }

@@ -19,7 +19,9 @@ export const Navbar = () => {
     <nav className="fixed w-full z-10 nav">
       <ul className="flex justify-end text-sm gap-12 py-4 mx-6">
         <li>
-          <Link href="/">HOME</Link>
+          <Link href="/" className="relative links">
+            HOME
+          </Link>
         </li>
         <li>MENU</li>
         <li>
