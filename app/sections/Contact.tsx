@@ -35,7 +35,7 @@ export const Contact = () => {
         <ul className="w-full md:w-1/2 flex flex-col md:items-center">
           <li>
             <span className="font-semibold opacity-80">Useful Links:</span>
-            <ul className="mt-4 flex flex-col gap-1">
+            <ul className="enlargedCursor mt-4 flex flex-col gap-1">
               <li>
                 <Link href="https://github.com/antoinel74">Github</Link>
               </li>
