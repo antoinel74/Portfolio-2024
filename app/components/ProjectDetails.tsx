@@ -12,14 +12,14 @@ interface ProjectDetailsProps {
 
 export const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project, maxItems, getNextId, getPrevId }) => {
   return (
-    <section className="md:mt-0 project-details flex flex-col md:flex-row justify-center md:items-center w-full min-h-screen px-6 md:px-12">
-      <div className="w-full md:w-1/2 flex flex-col gap-4 mt-24 md:mt-0">
+    <section className="md:mt-0 project-details flex flex-col md:flex-row justify-center md:items-center w-full min-h-screen">
+      <div className="w-full md:w-1/2 flex flex-col gap-4 mt-24 md:mt-0 px-6 md:px-12">
         <div className="flex justify-between">
           <h1 className="font-bold uppercase text-5xl">{project.name}</h1>
           <div className="flex gap-2 items-center opacity-80">
-            <Link href={`/projects/${getPrevId(project.id)}/`}>-</Link>
+            <Link href={`/projects/${getPrevId(project.id)}/`}>&lt;</Link>
             <span>{`${project.id}/${maxItems}`}</span>
-            <Link href={`/projects/${getNextId(project.id)}/`}>+</Link>
+            <Link href={`/projects/${getNextId(project.id)}/`}>&gt;</Link>
           </div>
         </div>
 
@@ -39,21 +39,8 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project, maxItem
         </a>
       </div>
 
-      <div className="w-full md:w-1/2 h-screen flex flex-col justify-center items-end gap-4 mt-6 md:mt-0 overflow-hidden">
-        <Image
-          src={project.img}
-          alt={project.name}
-          height={200}
-          width={400}
-          className="hover:scale-95 transition-all"
-        />
-        <Image
-          src={project.img}
-          alt={project.name}
-          height={200}
-          width={400}
-          className="hover:scale-95 transition-all"
-        />
+      <div className="relative w-full md:w-1/2 h-screen flex flex-col justify-center md:items-end gap-4 mt-6 md:mt-0 overflow-hidden">
+        <Image src={project.img} alt={project.name} fill className="object-cover" />
       </div>
     </section>
   );
