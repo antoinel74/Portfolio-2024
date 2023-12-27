@@ -29,7 +29,6 @@ export const Navbar = () => {
       }
       lastScroll = currentScroll <= 0 ? 0 : currentScroll;
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
