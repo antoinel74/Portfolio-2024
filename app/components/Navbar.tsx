@@ -1,18 +1,39 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
 
 export const Navbar = () => {
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down">("up");
+
   useEffect(() => {
-    const tl = gsap.timeline({ defaults: { duration: 2, ease: "power3.out" } });
+    const tl = gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } });
     tl.set("nav", { opacity: 0, y: -50 });
 
     tl.to("nav", {
       opacity: 1,
       stagger: 0.1,
-      y: 0,
+      y: scrollDirection === "down" ? -50 : 0,
     });
+  }, [scrollDirection]);
+
+  useEffect(() => {
+    let lastScroll = 0;
+
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > lastScroll + 10) {
+        setScrollDirection("down");
+      } else if (currentScroll < lastScroll - 10) {
+        setScrollDirection("up");
+      }
+      lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
