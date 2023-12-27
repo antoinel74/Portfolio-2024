@@ -10,3 +10,5 @@ export const ScrollDown = forwardRef<HTMLHeadingElement>((_, ref: Ref<HTMLHeadin
     </div>
   );
 });
+
+ScrollDown.displayName = "ScrollDown";

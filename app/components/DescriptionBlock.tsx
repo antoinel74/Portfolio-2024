@@ -12,3 +12,5 @@ export const DescriptionBlock = forwardRef<HTMLHeadingElement>((_, ref: Ref<HTML
     </div>
   );
 });
+
+DescriptionBlock.displayName = "DescriptionBlock";

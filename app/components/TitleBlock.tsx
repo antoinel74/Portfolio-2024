@@ -11,3 +11,5 @@ export const TitleBlock = forwardRef<HTMLHeadingElement>((_, ref: Ref<HTMLHeadin
     </h1>
   );
 });
+
+TitleBlock.displayName = "TitleBlock";

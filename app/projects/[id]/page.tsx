@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { ProjectDetails } from "@/app/components/ProjectDetails";
 import { ProjectData } from "@/app/types/types";
 
-const page = () => {
+const Page = () => {
   const { id } = useParams<{ id: string }>();
   const parsedId = parseInt(id);
   const maxItems = data.length;
@@ -36,4 +36,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -4,9 +4,9 @@ import { gsap } from "gsap";
 
 export const CustomCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
-  let initCursor = false;
 
   useEffect(() => {
+    let initCursor = false;
     const cursor = cursorRef.current;
 
     const handleMouseMove = (e: MouseEvent) => {
