@@ -10,13 +10,13 @@ export const Navbar = () => {
 
     tl.to("nav", {
       opacity: 1,
-      stagger: { each: 0.06 },
+      stagger: 0.1,
       y: 0,
     });
   }, []);
 
   return (
-    <nav className="fixed w-full z-10 nav">
+    <nav className="fixed w-full z-10 nav opacity-0">
       <ul className="flex justify-end text-sm gap-12 py-4 mx-6">
         <li>
           <Link href="/" className="relative links">

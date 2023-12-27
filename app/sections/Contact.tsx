@@ -35,13 +35,9 @@ export const Contact = () => {
   }, []);
 
   return (
-    <section
-      className="min-h-[60vh] flex flex-col overflow-hidden px-4 py-12 gap-6 md:gap-12"
-      id="contact"
-      ref={sectionRef}
-    >
+    <section className="min-h-[60vh] flex flex-col overflow-hidden py-12 gap-6 md:gap-12" id="contact" ref={sectionRef}>
       <MarqueeText content={"Let's connect"} />
-      <div className="flex justify-end items-center flex-col-reverse md:flex-row w-full gap-8 py-6 mb-6">
+      <div className="flex justify-end items-center flex-col-reverse md:flex-row w-full gap-8 py-6 mb-6 px-4 md:px-0">
         <ul className="w-full md:w-1/2 flex flex-col md:items-center">
           <li>
             <span className="font-semibold opacity-80">Useful Links:</span>

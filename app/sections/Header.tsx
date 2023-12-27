@@ -18,14 +18,14 @@ export const Header = () => {
 
     tl.to([titleRef.current, descriptionRef.current, scrollDownRef.current], {
       opacity: 1,
-      stagger: { each: 0.06 },
+      stagger: 0.1,
       y: 0,
       x: 0,
     });
   }, []);
 
   return (
-    <section className="relative min-h-[95vh] w-full overflow-hidden">
+    <section className="relative min-h-[95vh] w-full overflow-hidden px-6">
       <div className="absolute top-1/4 md:top-1/2 w-full flex flex-col md:flex-row-reverse gap-6 md:gap-0 flex-wrap">
         <TitleBlock ref={titleRef} />
         <DescriptionBlock ref={descriptionRef} />
