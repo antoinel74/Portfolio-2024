@@ -49,7 +49,9 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project, maxItem
       </div>
 
       <div className="relative w-full md:w-1/2 h-[50vh] md:h-screen flex flex-col justify-center md:items-end gap-4 mt-6 md:mt-0">
-        <Image src={project.img} alt={project.name} fill className="object-cover" />
+        <a href={project.link}>
+          <Image src={project.img} alt={project.name} fill className="object-cover hover:scale-[99%] transition-all" />
+        </a>
       </div>
     </section>
   );
