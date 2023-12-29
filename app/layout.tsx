@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./style/globals.css";
 import "./style/animations.css";
-import { Navbar } from "./components/Navbar";
+import { Navbar, Footer } from "./components";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${inter.className} min-h-screen relative`}>
         <Navbar />
         {children}
+		<Footer />
       </body>
     </html>
   );

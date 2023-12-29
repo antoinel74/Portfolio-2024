@@ -1,11 +1,8 @@
-import { Header } from "./sections/Header";
+
 import { promises as fs } from "fs";
 import { ProjectData } from "./types/types";
-import { ProjectsGrid } from "./sections/ProjectsGrid";
-import { Button } from "./components/Button";
-import { Contact } from "./sections/Contact";
-import { Footer } from "./components/Footer";
-import { CustomCursor } from "./components/CustomCursor";
+import { Header , ProjectsGrid, Contact } from "./sections"
+import { Button, Footer, CustomCursor }from "./components"
 
 export default async function Home() {
   const file = await fs.readFile(process.cwd() + "/app/data/data.json", "utf-8");
@@ -18,7 +15,6 @@ export default async function Home() {
       <ProjectsGrid data={data} />
       <Button link="/projects/1" linkText="Learn more ->" />
       <Contact />
-      <Footer />
     </main>
   );
 }
