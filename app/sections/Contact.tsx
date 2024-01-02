@@ -61,12 +61,12 @@ export const Contact = () => {
           </li>
         </ul>
         <div className="w-full md:w-1/2">
-          <p className="flex flex-col text-2xl md:text-4xl font-semibold">
+          <p className="flex flex-col text-3xl md:text-4xl font-semibold">
             Let&apos;s Connect !<span>Write me a message</span>
           </p>
           <a
             href="mailto:antoinelansman@gmail.com"
-            className="text-xl md:text-3xl font-thin links"
+            className="flex text-2xl md:text-3xl font-thin links"
             aria-label="Email Address"
           >
             antoine.lansman@gmail.com
