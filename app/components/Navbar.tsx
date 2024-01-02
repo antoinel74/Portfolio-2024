@@ -8,10 +8,9 @@ export const Navbar = () => {
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } });
-    tl.set("nav", { opacity: 0, y: -50 });
+    tl.set("nav", { y: -50 });
 
     tl.to("nav", {
-      opacity: 1,
       stagger: 0.1,
       y: scrollDirection === "down" ? -50 : 0,
     });
@@ -36,7 +35,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed w-full z-10 nav opacity-0">
+    <nav className="fixed w-full z-10 nav">
       <ul className="flex justify-end text-sm gap-12 py-4 mx-6">
         <li>
           <Link href="/" className="relative links">
