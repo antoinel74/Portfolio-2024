@@ -3,8 +3,12 @@ import Image from "next/image";
 
 export const TitleBlock = forwardRef<HTMLHeadingElement>((_, ref: Ref<HTMLHeadingElement>) => {
   return (
-    <h1 className="opacity-0 text-4xl md:text-5xl flex flex-col w-full md:w-1/2 gap-2" ref={ref} id="main-title">
-      <span className="flex gap-2 items-center">
+    <h1
+      className="opacity-0 text-[clamp(1.9rem,3vw,3rem)] leading-tight flex flex-col w-full md:w-1/2 flex-wrap"
+      ref={ref}
+      id="main-title"
+    >
+      <span className="flex gap-1 items-center">
         Creative mind{" "}
         <Image
           src="/svg/and.svg"
