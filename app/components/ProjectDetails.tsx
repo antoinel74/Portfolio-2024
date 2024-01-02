@@ -39,7 +39,7 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project, maxItem
             </span>
           ))}
         </div>
-        <p className="my-6 font-light">{project.description}</p>
+        <p className="my-6 font-light md:min-h-[180px]">{project.description}</p>
         <p className="font-semibold my-6">
           Year : <span className="font-light">{project.date}</span>
         </p>
