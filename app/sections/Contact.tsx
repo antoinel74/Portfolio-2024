@@ -49,7 +49,10 @@ export const Contact = () => {
                 <CustomLink href="https://www.linkedin.com/in/antoinelsm/" text="Linkedin" />
               </li>
               <li>
-                <CustomLink href="https://spotify.com" text="Spotify Work Playlist" />
+                <CustomLink
+                  href="https://open.spotify.com/playlist/5cj42WFFPr9pKAlLcgN3qA?si=fddbed4c9491421b"
+                  text="Spotify Work Playlist"
+                />
               </li>
               <li>
                 <CustomLink href="https://www.instagram.com/antoinelsm/" text="Instagram" />

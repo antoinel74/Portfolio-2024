@@ -13,7 +13,7 @@ interface ProjectDetailsProps {
 export const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project, maxItems, getNextId, getPrevId }) => {
   return (
     <section className="project-details relative w-full min-h-screen flex flex-col justify-center md:flex-row md:mt-0 md:items-center">
-      <Link href="/" className="absolute top-6 left-6 text-4xl p-6 font-thin">
+      <Link href="/" className="fixed top-6 left-6 text-4xl p-6 font-thin hidden md:inline">
         <Image
           src="/arrow-left.svg"
           width={60}
@@ -32,7 +32,7 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project, maxItem
           </div>
         </div>
 
-        <div className="flex gap-2 opacity-80 text-sm">
+        <div className="flex flex-wrap gap-2 opacity-80 text-sm">
           {project.stack.map((stackItem, index) => (
             <span key={index} className="border border-gray-400 rounded-full py-1 px-3">
               {stackItem}
