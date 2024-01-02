@@ -27,7 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
         gsap.to(cursor, {
           duration: 0.5,
           opacity: 1,
-          scale: 1.2,
+          scale: 1.3,
           ease: "elastic",
         });
       }
@@ -36,7 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
     el.addEventListener("mouseleave", () => {
       if (cursor) {
         gsap.to(cursor, {
-          duration: 0.5,
+          duration: 0.7,
           opacity: 0,
           scale: 1,
           ease: "elastic",
