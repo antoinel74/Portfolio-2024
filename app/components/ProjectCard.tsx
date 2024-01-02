@@ -69,13 +69,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
         <span>See Project</span>
       </div>
       <Link href={`/projects/${data.id}`}>
-        <figure className="relative w-full min-h-[50vh] rounded-md opacity-0" ref={ref}>
-          <Image
-            src={data.img}
-            alt={data.name}
-            fill
-            className="aspect-[3/4] absolute rounded-md w-full h-full object-cover"
-          />
+        <figure className={`relative w-full min-h-[50vh] rounded-md opacity-0`} ref={ref}>
+          <Image src={data.img} alt={data.name} fill className="absolute rounded-md w-full h-full object-cover" />
           <figcaption className="absolute top-2 left-2 bg-black rounded-xl px-2 opacity-50 text-white">
             {data.name}
           </figcaption>
