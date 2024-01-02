@@ -76,8 +76,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
             fill
             className="aspect-[3/4] absolute rounded-md w-full h-full object-cover"
           />
-          <figcaption className="absolute top-2 left-2 bg-black rounded-xl px-2 opacity-50">{data.name}</figcaption>
-          <span className="absolute top-2 right-2 bg-black rounded-xl px-2 opacity-50">{data.date}</span>
+          <figcaption className="absolute top-2 left-2 bg-black rounded-xl px-2 opacity-50 text-white">
+            {data.name}
+          </figcaption>
+          <span className="absolute top-2 right-2 bg-black rounded-xl px-2 opacity-50 text-white">{data.date}</span>
         </figure>
       </Link>
     </div>

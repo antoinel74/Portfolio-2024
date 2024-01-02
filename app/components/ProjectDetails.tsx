@@ -19,7 +19,7 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project, maxItem
           width={60}
           height={60}
           alt="back_home"
-          className="invert hover:opacity-90 hover:scale-95 transition-all"
+          className="dark:invert hover:opacity-90 hover:scale-95 transition-all"
         />
       </Link>
       <div className="w-full md:w-1/2 flex flex-col gap-4 mt-24 md:mt-0 px-6 md:px-12">
@@ -34,7 +34,7 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project, maxItem
 
         <div className="flex gap-2 opacity-80 text-sm">
           {project.stack.map((stackItem, index) => (
-            <span key={index} className="border border-gray-200 rounded-full py-1 px-3">
+            <span key={index} className="border border-gray-400 rounded-full py-1 px-3">
               {stackItem}
             </span>
           ))}
