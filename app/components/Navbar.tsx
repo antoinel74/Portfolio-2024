@@ -43,7 +43,11 @@ export const Navbar = () => {
             HOME
           </Link>
         </li>
-        <li>MENU</li>
+        <li>
+          <Link href="/projects/1" className="relative links">
+            WORKS
+          </Link>
+        </li>
         <li>
           <Link href="/#contact" className="links">
             CONTACT
