@@ -15,7 +15,7 @@ export const CustomCursor: React.FC = () => {
 
       if (!initCursor && cursor) {
         gsap.to(cursor, {
-          duration: 0.4,
+          duration: 0.3,
           opacity: 1,
           scale: 1,
         });
