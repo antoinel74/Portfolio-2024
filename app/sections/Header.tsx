@@ -1,12 +1,15 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-import { TitleBlock } from "../components/TitleBlock";
-import { DescriptionBlock } from "../components/DescriptionBlock";
 import { ScrollDown } from "../components/ScrollDown";
+import { BusyStatus } from "../components/BusyStatus";
 import { gsap } from "gsap";
-import { DescriptionProps } from "../components/DescriptionBlock";
+import Image from "next/image";
 
-export const Header: React.FC<DescriptionProps> = (data) => {
+interface IHeader {
+  description?: any;
+}
+
+export const Header: React.FC<IHeader> = (data) => {
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
   const scrollDownRef = useRef(null);
@@ -28,8 +31,28 @@ export const Header: React.FC<DescriptionProps> = (data) => {
   return (
     <section className="relative min-h-[95vh] w-full overflow-hidden px-4 md:px-6">
       <div className="absolute top-1/4 md:top-1/2 w-full flex flex-col md:flex-row-reverse gap-6 md:gap-0 flex-wrap">
-        <TitleBlock ref={titleRef} />
-        <DescriptionBlock ref={descriptionRef} description={data.description} />
+        <h1
+          className="opacity-0 text-[clamp(1.9rem,3vw,3rem)] leading-tight flex flex-col w-full md:w-1/2 flex-wrap"
+          ref={titleRef}
+          id="main-title"
+        >
+          <span className="flex gap-1 items-center">
+            Creative mind{" "}
+            <Image
+              src="/svg/and.svg"
+              height={18}
+              width={16}
+              className="invert dark:invert-0 md:h-7 md:w-18 h-5 w-16"
+              alt="and"
+            />
+          </span>
+          <span>Front-end developer</span>
+          <span>currently based in Belgium</span>
+        </h1>
+        <div className="flex flex-col gap-6 w-full md:w-1/2 md:pl-12 opacity-0 y-0" ref={descriptionRef}>
+          {data.description && <p className="w-2/3 max-w-[500px]">{data.description}</p>}
+          <BusyStatus title="open to work" busy={false} className="" />
+        </div>
       </div>
       <ScrollDown ref={scrollDownRef} />
     </section>
