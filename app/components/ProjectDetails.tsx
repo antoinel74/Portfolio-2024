@@ -49,13 +49,15 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-2 opacity-80 text-sm">
-          {stacks.map((item, index) => (
-            <span key={index} className="border border-gray-400 rounded-full py-1 px-3">
-              {item.tech}
-            </span>
-          ))}
-        </div>
+        {stacks && (
+          <div className="flex flex-wrap gap-2 opacity-80 text-sm">
+            {stacks.map((item, index) => (
+              <span key={index} className="border border-gray-400 rounded-full py-1 px-3">
+                {item.tech}
+              </span>
+            ))}
+          </div>
+        )}
 
         {description && <p className="my-6 font-light md:min-h-[180px]">{description}</p>}
 
