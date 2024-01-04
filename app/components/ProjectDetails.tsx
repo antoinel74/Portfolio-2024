@@ -28,7 +28,6 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   maxItems,
   currentIndex,
 }) => {
-  console.log(link);
   return (
     <section className="project-details relative w-full min-h-screen flex flex-col justify-center md:flex-row md:mt-0 md:items-center">
       <Link href="/" className="fixed top-6 left-6 text-4xl p-6 font-thin hidden md:inline">
