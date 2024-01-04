@@ -1,11 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import ProjectCard from "../components/ProjectCard";
-import { ProjectData } from "@/app/types/types";
 import { Button } from "../components/Button";
 
-interface ProjectsGridProps {
-  data: ProjectData[];
+export interface IProjectGrid {
+  projects: any[];
 }
 
 const cardGridPositions = (index: number, isMobile: boolean): string => {
@@ -26,8 +25,9 @@ const cardGridPositions = (index: number, isMobile: boolean): string => {
   }
 };
 
-export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ data }) => {
+export const ProjectsGrid: React.FC<IProjectGrid> = ({ projects }) => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  console.log(projects[0]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,14 +39,12 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ data }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const limitedData = data.slice(0, 4);
-
   return (
     <section className="w-full min-h-screen relative md:px-6" data-scroll-section>
       <div className="grid grid-cols-5 grid-rows-2 gap-4 mb-5">
-        {limitedData.map((item, index) => (
+        {projects.map((item, index) => (
           <div key={index} className={cardGridPositions(index, isMobile)}>
-            <ProjectCard key={index} data={item} />
+            <ProjectCard key={index} uid={item.uid} {...item.data} />
           </div>
         ))}
       </div>

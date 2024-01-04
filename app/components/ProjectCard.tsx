@@ -1,18 +1,20 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-import Image from "next/image";
-import { ProjectData } from "../types/types";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { PrismicNextImage } from "@prismicio/next";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface ProjectCardProps {
-  data: ProjectData;
+export interface ProjectCardProps {
+  year: any;
+  title: any;
+  img: any;
+  uid: any;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ year, title, img, uid }) => {
   const ref = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
 
@@ -68,13 +70,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
       >
         <span>See Project</span>
       </div>
-      <Link href={`/projects/${data.id}`}>
+      <Link href={`/projects/${uid}`}>
         <figure className={`relative w-full min-h-[50vh] rounded-md opacity-0`} ref={ref}>
-          <Image src={data.img} alt={data.name} fill className="absolute rounded-md w-full h-full object-cover" />
+          <PrismicNextImage field={img} fill className="absolute rounded-md w-full h-full object-cover" />
           <figcaption className="absolute top-2 left-2 bg-black rounded-xl px-2 opacity-50 text-white">
-            {data.name}
+            {title}
           </figcaption>
-          <span className="absolute top-2 right-2 bg-black rounded-xl px-2 opacity-50 text-white">{data.date}</span>
+          <span className="absolute top-2 right-2 bg-black rounded-xl px-2 opacity-50 text-white">{year}</span>
         </figure>
       </Link>
     </div>

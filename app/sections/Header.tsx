@@ -4,8 +4,9 @@ import { TitleBlock } from "../components/TitleBlock";
 import { DescriptionBlock } from "../components/DescriptionBlock";
 import { ScrollDown } from "../components/ScrollDown";
 import { gsap } from "gsap";
+import { DescriptionProps } from "../components/DescriptionBlock";
 
-export const Header = () => {
+export const Header: React.FC<DescriptionProps> = (data) => {
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
   const scrollDownRef = useRef(null);
@@ -28,7 +29,7 @@ export const Header = () => {
     <section className="relative min-h-[95vh] w-full overflow-hidden px-4 md:px-6">
       <div className="absolute top-1/4 md:top-1/2 w-full flex flex-col md:flex-row-reverse gap-6 md:gap-0 flex-wrap">
         <TitleBlock ref={titleRef} />
-        <DescriptionBlock ref={descriptionRef} />
+        <DescriptionBlock ref={descriptionRef} description={data.description} />
       </div>
       <ScrollDown ref={scrollDownRef} />
     </section>
