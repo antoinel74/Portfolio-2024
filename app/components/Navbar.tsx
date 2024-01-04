@@ -43,7 +43,7 @@ export const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link href="/#works" className="relative links">
+          <Link href="/projects/cogip" className="relative links">
             WORKS
           </Link>
         </li>
