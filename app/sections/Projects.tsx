@@ -47,7 +47,7 @@ export const ProjectsGrid: React.FC<IProjectGrid> = ({ projects }) => {
           </li>
         ))}
       </ul>
-      <Button link="/projects/netflix-clone" linkText="Learn more ->" />
+      <Button link={`/projects/${projects[1].uid}`} linkText="Learn more ->" />
     </section>
   );
 };
