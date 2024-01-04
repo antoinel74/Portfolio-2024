@@ -21,30 +21,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ year, title, img, uid }) => {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const cursor = cursorRef.current;
-
-    // "See Project" hover
-    el.addEventListener("mouseenter", () => {
-      if (cursor) {
-        gsap.to(cursor, {
-          duration: 0.5,
-          opacity: 1,
-          scale: 1.3,
-          ease: "elastic",
-        });
-      }
-    });
-
-    el.addEventListener("mouseleave", () => {
-      if (cursor) {
-        gsap.to(cursor, {
-          duration: 0.7,
-          opacity: 0,
-          scale: 1,
-          ease: "elastic",
-        });
-      }
-    });
 
     // Reveal animation
     gsap.fromTo(
@@ -63,15 +39,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ year, title, img, uid }) => {
   }, []);
 
   return (
-    <div className="w-full overflow-hidden relative ">
-      <div
-        className="pointer-events-none opacity-0 z-50 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black font-light w-28 h-28 flex justify-center items-center"
-        ref={cursorRef}
-      >
+    <div className="w-full overflow-hidden relative group">
+      <div className="pointer-events-none opacity-0 text-lg z-50 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black font-light w-32 h-32 flex justify-center items-center group-hover:opacity-100 scale-50 group-hover:scale-110 duration-300">
         <span>See Project</span>
       </div>
       <Link href={`/projects/${uid}`}>
-        <figure className={`relative w-full min-h-[50vh] rounded-md opacity-0`} ref={ref}>
+        <figure className={`relative w-full min-h-[50vh] rounded-md overflow-hidden opacity-0`} ref={ref}>
           <PrismicNextImage field={img} fill className="absolute rounded-md w-full h-full object-cover" />
           <figcaption className="absolute top-2 left-2 bg-black rounded-xl px-2 opacity-50 text-white">
             {title}
