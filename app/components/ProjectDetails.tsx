@@ -10,9 +10,25 @@ export interface ProjectDetailsProps {
   img: any;
   link: any;
   stacks: any[];
+  prevUID: string;
+  nextUID: string;
+  maxItems: number;
+  currentIndex: number;
 }
 
-export const ProjectDetails: React.FC<ProjectDetailsProps> = ({ title, description, year, stacks, img, link }) => {
+export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
+  title,
+  description,
+  year,
+  stacks,
+  img,
+  link,
+  nextUID,
+  prevUID,
+  maxItems,
+  currentIndex,
+}) => {
+  console.log(link);
   return (
     <section className="project-details relative w-full min-h-screen flex flex-col justify-center md:flex-row md:mt-0 md:items-center">
       <Link href="/" className="fixed top-6 left-6 text-4xl p-6 font-thin hidden md:inline">
@@ -28,9 +44,9 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({ title, descripti
         <div className="flex justify-between">
           <h1 className="font-bold uppercase text-5xl">{title}</h1>
           <div className="flex gap-2 items-center opacity-80">
-            {/*        <Link href={`/projects/${getPrevId(project.id)}/`}>&lt;</Link>
-            <span>{`${project.id}/${maxItems}`}</span>
-            <Link href={`/projects/${getNextId(project.id)}/`}>&gt;</Link> */}
+            <Link href={`/projects/${prevUID}`}>&lt;</Link>
+            <span>{`${currentIndex}/${maxItems}`}</span>
+            <Link href={`/projects/${nextUID}`}>&gt;</Link>
           </div>
         </div>
 
@@ -51,14 +67,14 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({ title, descripti
         )}
 
         {link && (
-          <a href={link} className="links font-semibold">
+          <a href={link.url} className="links font-semibold">
             See the deployed project &rarr;
           </a>
         )}
       </div>
 
       <div className="relative w-full md:w-1/2 h-[50vh] md:h-screen flex flex-col justify-center md:items-end gap-4 mt-6 md:mt-0">
-        <a href={link}>
+        <a href={link.url}>
           <PrismicNextImage field={img} fill className="object-cover hover:scale-[99%] transition-all" />
         </a>
       </div>

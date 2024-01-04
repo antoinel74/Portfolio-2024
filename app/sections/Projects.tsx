@@ -27,7 +27,6 @@ const cardGridPositions = (index: number, isMobile: boolean): string => {
 
 export const ProjectsGrid: React.FC<IProjectGrid> = ({ projects }) => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  console.log(projects[0]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -40,15 +39,15 @@ export const ProjectsGrid: React.FC<IProjectGrid> = ({ projects }) => {
   }, []);
 
   return (
-    <section className="w-full min-h-screen relative md:px-6" data-scroll-section>
-      <div className="grid grid-cols-5 grid-rows-2 gap-4 mb-5">
+    <section className="w-full min-h-screen relative md:px-6" id="works">
+      <ul className="grid grid-cols-5 grid-rows-2 gap-4 mb-5">
         {projects.map((item, index) => (
-          <div key={index} className={cardGridPositions(index, isMobile)}>
+          <li key={index} className={cardGridPositions(index, isMobile)}>
             <ProjectCard key={index} uid={item.uid} {...item.data} />
-          </div>
+          </li>
         ))}
-      </div>
-      <Button link="/projects/1" linkText="Learn more ->" />
+      </ul>
+      <Button link="/projects/netflix-clone" linkText="Learn more ->" />
     </section>
   );
 };

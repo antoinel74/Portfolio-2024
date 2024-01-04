@@ -43,7 +43,7 @@ export const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link href="/projects/1" className="relative links">
+          <Link href="/#works" className="relative links">
             WORKS
           </Link>
         </li>

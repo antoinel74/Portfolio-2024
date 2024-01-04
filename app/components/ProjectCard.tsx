@@ -8,8 +8,8 @@ import { PrismicNextImage } from "@prismicio/next";
 gsap.registerPlugin(ScrollTrigger);
 
 export interface ProjectCardProps {
-  year: any;
-  title: any;
+  year: string;
+  title: string;
   img: any;
   uid: any;
 }
