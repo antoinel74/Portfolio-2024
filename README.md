@@ -1,4 +1,4 @@
-# COGIP
+# Portfolio 2024
 
 ## About the project
 
