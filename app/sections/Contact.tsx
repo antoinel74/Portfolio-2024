@@ -5,15 +5,23 @@ import { MarqueeText } from "../components/Marquee";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+interface IContact {
+  github?: any;
+  linkedin?: any;
+  spotify?: any;
+  instagram?: any;
+  email?: any;
+}
+
 gsap.registerPlugin(ScrollTrigger);
 
-const CustomLink = ({ href, text }: { href: string; text: string }) => (
+const CustomLink = ({ href, text }: { href: any; text: string }) => (
   <Link href={href} className="hover:opacity-80">
     {text}
   </Link>
 );
 
-export const Contact = () => {
+export const Contact: React.FC<IContact> = (data) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -43,19 +51,16 @@ export const Contact = () => {
             <span className="font-semibold opacity-80">Useful Links:</span>
             <ul className="mt-4 flex flex-col gap-1">
               <li>
-                <CustomLink href="https://github.com/antoinel74" text="Github" />
+                <CustomLink href={data.github.url} text="Github" />
               </li>
               <li>
-                <CustomLink href="https://www.linkedin.com/in/antoinelsm/" text="Linkedin" />
+                <CustomLink href={data.linkedin.url} text="Linkedin" />
               </li>
               <li>
-                <CustomLink
-                  href="https://open.spotify.com/playlist/5cj42WFFPr9pKAlLcgN3qA?si=fddbed4c9491421b"
-                  text="Spotify Work Playlist"
-                />
+                <CustomLink href={data.spotify.url} text="Spotify Work Playlist" />
               </li>
               <li>
-                <CustomLink href="https://www.instagram.com/antoinelsm/" text="Instagram" />
+                <CustomLink href={data.instagram.url} text="Instagram" />
               </li>
             </ul>
           </li>
@@ -64,11 +69,7 @@ export const Contact = () => {
           <p className="flex flex-col text-3xl md:text-4xl font-semibold">
             Let&apos;s Connect !<span>Write me a message</span>
           </p>
-          <a
-            href="mailto:antoinelansman@gmail.com"
-            className="flex text-2xl md:text-3xl font-thin links"
-            aria-label="Email Address"
-          >
+          <a href={data.email.url} className="flex text-2xl md:text-3xl font-thin links" aria-label="Email Address">
             antoine.lansman@gmail.com
           </a>
         </div>

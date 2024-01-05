@@ -18,7 +18,7 @@ export default async function Home() {
     <main data-scroll-container id="main-container">
       <Header {...page?.data} />
       <ProjectsGrid projects={projects.slice(0, 4)} />
-      <Contact />
+      <Contact {...page?.data} />
       <Footer />
     </main>
   );
