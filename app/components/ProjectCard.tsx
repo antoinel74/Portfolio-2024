@@ -16,7 +16,6 @@ export interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ year, title, img, uid }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -29,7 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ year, title, img, uid }) => {
       {
         scale: 1,
         opacity: 1,
-        duration: 0.9,
+        duration: 1,
         stagger: 0.1,
         scrollTrigger: {
           trigger: el,
