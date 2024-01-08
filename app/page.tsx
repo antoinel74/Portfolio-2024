@@ -13,11 +13,12 @@ export default async function Home() {
       direction: "desc",
     },
   });
+  console.log(projects);
 
   return (
     <main data-scroll-container id="main-container">
       <Header {...page?.data} />
-      <ProjectsGrid projects={projects.slice(0, 4)} />
+      <ProjectsGrid projects={projects} />
       <Contact {...page?.data} />
       <Footer />
     </main>
