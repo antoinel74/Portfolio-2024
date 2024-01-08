@@ -1,6 +1,5 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-import Link from "next/link";
 import { MarqueeText } from "../components/Marquee";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,9 +15,9 @@ interface IContact {
 gsap.registerPlugin(ScrollTrigger);
 
 const CustomLink = ({ href, text }: { href: any; text: string }) => (
-  <Link href={href} className="hover:opacity-80">
+  <a href={href} className="hover:opacity-80">
     {text}
-  </Link>
+  </a>
 );
 
 export const Contact: React.FC<IContact> = (data) => {

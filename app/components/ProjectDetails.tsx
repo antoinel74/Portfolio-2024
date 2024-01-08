@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
 export interface ProjectDetailsProps {
   title: any;
@@ -30,7 +30,7 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
 }) => {
   return (
     <section className="project-details relative w-full min-h-screen flex flex-col justify-center md:flex-row md:mt-0 md:items-center">
-      <Link href="/" className="fixed top-6 left-6 text-4xl p-6 font-thin hidden md:inline">
+      <PrismicNextLink href="/" className="fixed top-6 left-6 text-4xl p-6 font-thin hidden md:inline">
         <Image
           src="/arrow-left.svg"
           width={60}
@@ -38,14 +38,14 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
           alt="back_home"
           className="dark:invert hover:opacity-90 hover:scale-95 transition-all"
         />
-      </Link>
+      </PrismicNextLink>
       <div className="w-full md:w-1/2 flex flex-col gap-4 mt-24 md:mt-0 px-6 md:px-12">
         <div className="flex justify-between">
           <h1 className="font-bold uppercase text-5xl">{title}</h1>
           <div className="flex gap-2 items-center opacity-80">
-            <Link href={`/projects/${prevUID}`}>&lt;</Link>
+            <PrismicNextLink href={`/projects/${prevUID}`}>&lt;</PrismicNextLink>
             <span>{`${currentIndex}/${maxItems}`}</span>
-            <Link href={`/projects/${nextUID}`}>&gt;</Link>
+            <PrismicNextLink href={`/projects/${nextUID}`}>&gt;</PrismicNextLink>
           </div>
         </div>
 

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { gsap } from "gsap";
+import { PrismicNextLink } from "@prismicio/next";
 
 export const Navbar = () => {
   const [scrollDirection, setScrollDirection] = useState<"up" | "down">("up");
@@ -38,19 +38,19 @@ export const Navbar = () => {
     <nav className="fixed w-full z-10 nav -translate-y-10">
       <ul className="flex justify-end text-sm gap-12 py-4 mx-6">
         <li>
-          <Link href="/" className="relative links">
+          <PrismicNextLink href="/" className="relative links">
             HOME
-          </Link>
+          </PrismicNextLink>
         </li>
         <li>
-          <Link href="/projects/cogip" className="relative links">
+          <PrismicNextLink href="/projects/cogip" className="relative links">
             WORKS
-          </Link>
+          </PrismicNextLink>
         </li>
         <li>
-          <Link href="/#contact" className="links">
+          <PrismicNextLink href="/#contact" className="links">
             CONTACT
-          </Link>
+          </PrismicNextLink>
         </li>
       </ul>
     </nav>

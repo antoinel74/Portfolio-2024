@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { PrismicNextLink } from "@prismicio/next";
 
 interface ButtonProps {
   linkText: string;
@@ -8,8 +8,8 @@ interface ButtonProps {
 
 export const Button: React.FC<ButtonProps> = ({ linkText, link }) => {
   return (
-    <Link href={link} className="button py-3 px-5 bg-fadeGray rounded-full hover:opacity-80">
+    <PrismicNextLink href={link} className="button py-3 px-5 bg-fadeGray rounded-full hover:opacity-80">
       {linkText}
-    </Link>
+    </PrismicNextLink>
   );
 };
