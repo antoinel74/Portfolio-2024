@@ -69,7 +69,7 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
 
         {link && (
           <a href={link.url} className="links font-semibold">
-            See the deployed project &rarr;
+            See the Github repository &rarr;
           </a>
         )}
       </div>
