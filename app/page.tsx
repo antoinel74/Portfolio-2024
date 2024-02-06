@@ -13,7 +13,6 @@ export default async function Home() {
       direction: "desc",
     },
   });
-  console.log(projects);
 
   return (
     <main data-scroll-container id="main-container">
