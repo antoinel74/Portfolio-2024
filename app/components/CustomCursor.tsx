@@ -52,7 +52,7 @@ export const CustomCursor: React.FC = () => {
 
   return (
     <div
-      className="custom-cursor mix-blend-difference pointer-events-none rounded-full fixed top-0 left-0 bg-white z-50 opacity-1 w-[15px] h-[15px]"
+      className="custom-cursor mix-blend-difference pointer-events-none rounded-full fixed top-0 left-0 bg-[#BCF604] z-50 opacity-1 w-[15px] h-[15px]"
       ref={cursorRef}
       id="custom-cursor"
     ></div>
