@@ -42,7 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ year, title, img, uid }) => {
         <span>See Project</span>
       </div>
       <PrismicNextLink href={`/projects/${uid}`}>
-        <figure className={`relative w-full h-full min-h-[55vh] rounded-md overflow-hidden opacity-0`} ref={ref}>
+        <figure className={`relative w-full h-full min-h-[50vh] rounded-md overflow-hidden opacity-0`} ref={ref}>
           <PrismicNextImage field={img} fill className="absolute rounded-md w-full h-full object-cover" />
           <figcaption className="absolute top-2 left-2 bg-black rounded-xl px-2 opacity-50 text-white">
             {title}
