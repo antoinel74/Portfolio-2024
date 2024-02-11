@@ -39,9 +39,9 @@ export const ProjectsGrid: React.FC<IProjectGrid> = ({ projects }) => {
   }, []);
 
   return (
-    <section className="w-full min-h-screen relative md:px-6" id="works">
+    <section className="w-full min-h-screen relative md:px-8" id="works">
       {projects && (
-        <ul className="grid grid-cols-5 grid-rows-2 gap-4 mb-5">
+        <ul className="grid grid-cols-5 grid-rows-2 gap-4 mb-8">
           {projects.map((item, index) => (
             <li key={index} className={cardGridPositions(index, isMobile)}>
               <ProjectCard key={index} uid={item.uid} {...item.data} />

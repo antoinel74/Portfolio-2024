@@ -42,13 +42,17 @@ export const Contact: React.FC<IContact> = (data) => {
   }, []);
 
   return (
-    <section className="min-h-[60vh] flex flex-col overflow-hidden py-12 gap-6 md:gap-12" id="contact" ref={sectionRef}>
+    <section
+      className="min-h-[60vh] flex flex-col overflow-hidden py-12 md:py-24 gap-6 md:gap-12"
+      id="contact"
+      ref={sectionRef}
+    >
       <MarqueeText content={"Let's connect"} />
-      <div className="flex justify-end items-center flex-col-reverse md:flex-row w-full gap-8 py-6 mb-6 px-4 md:px-0">
-        <ul className="w-full md:w-1/2 flex flex-col md:items-center">
+      <div className="flex flex-col-reverse md:flex-row w-full gap-8 py-8 md:py-24 pb-24 px-4 md:px-0">
+        <ul className="w-full md:w-1/2 flex flex-col md:items-center text-lg">
           <li>
             <span className="font-semibold opacity-80">Useful Links:</span>
-            <ul className="mt-4 flex flex-col gap-1">
+            <ul className="mt-4 flex flex-col gap-3">
               <li>
                 <CustomLink href={data.github.url} text="Github" />
               </li>

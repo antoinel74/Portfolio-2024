@@ -14,8 +14,14 @@ export const MarqueeText: React.FC<IMarquee> = ({ content }) => {
       <div className="flex gap-4 py-4">
         {Array.from({ length: repeatCount }, (_, index) => (
           <React.Fragment key={index}>
-            <p className="text-7xl uppercase ml-4">{content}</p>
-            <Image src="/svg/asterisk.svg" width={46} height={46} alt="asterisk svg" className="invert dark:invert-0" />
+            <p className="text-8xl uppercase ml-4">{content}</p>
+            <Image
+              src="/svg/asterisk.svg"
+              width={46}
+              height={46}
+              alt="asterisk svg"
+              className="invert dark:invert-0 animate-spin-slow"
+            />
           </React.Fragment>
         ))}
       </div>
