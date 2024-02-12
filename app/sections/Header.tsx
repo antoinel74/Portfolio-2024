@@ -29,7 +29,7 @@ export const Header: React.FC<IHeader> = (data) => {
   }, []);
 
   return (
-    <section className="relative min-h-[95vh] w-full overflow-hidden px-4 md:px-6">
+    <header className="relative min-h-[95vh] w-full overflow-hidden px-4 md:px-6">
       <div className="absolute top-1/4 md:top-[45%] w-full flex flex-col md:flex-row-reverse gap-6 md:gap-0 flex-wrap">
         <h1
           className="opacity-0 text-[clamp(2rem,3vw,3.5rem)] leading-tight flex flex-col w-full md:w-1/2 flex-wrap"
@@ -57,6 +57,6 @@ export const Header: React.FC<IHeader> = (data) => {
         </div>
       </div>
       <ScrollDown ref={scrollDownRef} />
-    </section>
+    </header>
   );
 };
