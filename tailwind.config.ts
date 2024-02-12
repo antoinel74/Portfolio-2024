@@ -9,7 +9,6 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        syne: "'Syne', sans-serif",
         ibm: "'IBM Plex Mono', monospace",
       },
       animation: {
