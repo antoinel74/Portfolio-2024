@@ -32,7 +32,7 @@ export const Header: React.FC<IHeader> = (data) => {
     <section className="relative min-h-[95vh] w-full overflow-hidden px-4 md:px-6">
       <div className="absolute top-1/4 md:top-[45%] w-full flex flex-col md:flex-row-reverse gap-6 md:gap-0 flex-wrap">
         <h1
-          className="opacity-0 text-[clamp(2rem,3.15vw,3.5rem)] leading-tight flex flex-col w-full md:w-1/2 flex-wrap"
+          className="opacity-0 text-[clamp(2rem,3vw,3.5rem)] leading-tight flex flex-col w-full md:w-1/2 flex-wrap"
           ref={titleRef}
           id="main-title"
         >
@@ -46,9 +46,9 @@ export const Header: React.FC<IHeader> = (data) => {
               alt="and"
             />
           </p>
-          <span>Front-end developer</span>
+          <span className="pr-4">Front-end developer</span>
           <p>
-            currently based in <span className="italic">Belgium</span>
+            currently based in <span className="pr-4 italic">Belgium</span>
           </p>
         </h1>
         <div className="flex flex-col gap-6 w-full md:w-1/2 md:items-center opacity-0 y-0" ref={descriptionRef}>
