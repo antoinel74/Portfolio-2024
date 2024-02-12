@@ -53,20 +53,15 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
           </div>
         )}
 
-        {description && <p className="my-6 md:h-[200px] md:overflow-scroll">{description}</p>}
-
-        <h3 className="font-ibm uppercase opacity-60">product info</h3>
+        {description && <p className="my-6 md:h-[250px] text-xl md:overflow-scroll">{description}</p>}
 
         {year && (
-          <p className="flex justify-between font-semibold mt-2 border-t border-b border-white border-opacity-60 py-4">
-            Year<span className="block font-light">{year}</span>
+          <p className="font-semibold py-2">
+            Year: <span className="font-light">{year}</span>
           </p>
         )}
-        <p className="flex justify-between font-semibold border-b border-white border-opacity-60 py-4">
-          Role<span className="block font-light">Front-End</span>
-        </p>
         {link && (
-          <Link href={link.url} className="links py-4 font-semibold">
+          <Link href={link.url} className="links py-2 font-semibold">
             See the Github repository &rarr;
           </Link>
         )}
@@ -74,7 +69,7 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
 
       <div className="relative w-full md:w-1/2 h-[50vh] md:h-screen flex flex-col justify-center md:items-end gap-4 mt-6 md:mt-0 font-ibm text-sm">
         <PrismicNextImage field={img} fill className="object-cover transition-all" />
-        <div className="absolute top-3 left-4 flex items-center bg-black rounded-full py-1 px-2 opacity-75 z-20">
+        <div className="absolute top-4 left-4 flex items-center bg-black rounded-full py-1 px-2 opacity-75 z-20">
           <PrismicNextLink href={`/projects/${prevUID}`} className="hover:scale-105">
             PREV
           </PrismicNextLink>
