@@ -16,7 +16,7 @@ interface IContact {
 gsap.registerPlugin(ScrollTrigger);
 
 const CustomLink = ({ href, text }: { href: any; text: string }) => (
-  <a href={href} className="hover:opacity-60 links">
+  <a href={href} className="links">
     {text}
   </a>
 );
@@ -44,13 +44,13 @@ export const Contact: React.FC<IContact> = (data) => {
 
   return (
     <section
-      className="min-h-[60vh] flex flex-col overflow-hidden py-12 md:py-24 gap-6 md:gap-12"
+      className="min-h-[60vh] flex flex-col overflow-hidden py-12 lg:py-24 gap-6 lg:gap-12"
       id="contact"
       ref={sectionRef}
     >
       <MarqueeText content={"Let's connect"} />
-      <div className="flex flex-col-reverse md:flex-row w-full gap-8 py-8 px-4 md:px-0">
-        <ul className="w-full md:w-1/2 flex flex-col md:items-center text-lg">
+      <div className="flex flex-col-reverse lg:flex-row w-full gap-8 py-8 px-4 lg:px-0">
+        <ul className="w-full lg:w-1/2 flex flex-col lg:items-center text-lg">
           <li>
             <span className="opacity-60 font-ibm uppercase">Useful Links:</span>
             <ul className="mt-4 flex flex-col gap-3">
@@ -70,12 +70,12 @@ export const Contact: React.FC<IContact> = (data) => {
           </li>
         </ul>
         <div className="w-full md:w-1/2">
-          <p className="flex flex-col text-3xl md:text-4xl font-semibold">
+          <p className="flex flex-col text-3xl lg:text-4xl font-semibold">
             Let&apos;s Connect !<span>Write me a message</span>
           </p>
           <PrismicNextLink
             href={data.email.url}
-            className="flex text-2xl md:text-3xl opacity-60 links block my-6"
+            className="flex text-xl lg:text-2xl opacity-60 links block uppercase my-6"
             aria-label="Email Address"
           >
             antoine.lansman@gmail.com

@@ -20,7 +20,7 @@ export const MarqueeText: React.FC<IMarquee> = ({ content }) => {
               width={55}
               height={55}
               alt="asterisk svg"
-              className="invert dark:invert-0 animate-spin-slow"
+              className="invert dark:invert-0 animate-spin-slow opacity-60"
             />
           </React.Fragment>
         ))}

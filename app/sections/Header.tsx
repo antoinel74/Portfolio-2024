@@ -37,7 +37,7 @@ export const Header: React.FC<IHeader> = (data) => {
           id="main-title"
         >
           <p className="flex gap-1 items-center">
-            <span className="italic mr-2">Creative</span> mind
+            <span className="mr-2">Creative</span> mind
             <Image
               src="/svg/and.svg"
               height={18}
@@ -47,9 +47,7 @@ export const Header: React.FC<IHeader> = (data) => {
             />
           </p>
           <span className="pr-4">Front-end developer</span>
-          <p>
-            currently based in <span className="pr-4 italic">Belgium</span>
-          </p>
+          <p className="pr-4">currently based in Belgium</p>
         </h1>
         <div className="flex flex-col gap-6 w-full md:w-1/2 md:items-center opacity-0 y-0" ref={descriptionRef}>
           <div className="w-2/3">
