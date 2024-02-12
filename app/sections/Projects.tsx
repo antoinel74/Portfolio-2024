@@ -51,7 +51,7 @@ export const ProjectsGrid: React.FC<IProjectGrid> = ({ projects }) => {
           ))}
         </ul>
       )}
-      <Button link={`/projects/${projects[1].uid}`} linkText="Learn more ->" />
+      <Button link={`/projects/${projects[1].uid}`} linkText="Discover works ->" />
     </section>
   );
 };

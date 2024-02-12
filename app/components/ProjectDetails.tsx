@@ -2,11 +2,12 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { KeyTextField } from "@prismicio/client";
 
 export interface ProjectDetailsProps {
-  title: any;
+  title: KeyTextField;
   description: any;
-  year: any;
+  year: KeyTextField;
   img: any;
   link: any;
   stacks: any[];
