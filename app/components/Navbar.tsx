@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { PrismicNextLink } from "@prismicio/next";
+import { Scrambler } from "./Scrambler";
 
 export const Navbar = () => {
   const [scrollDirection, setScrollDirection] = useState<"up" | "down">("up");
@@ -36,21 +37,15 @@ export const Navbar = () => {
 
   return (
     <nav className="fixed w-full z-10 nav -translate-y-10">
-      <ul className="flex justify-end text-sm gap-12 py-4 mx-6 font-ibm tracking-wide">
+      <ul className="flex justify-end text-sm md:text-base gap-12 py-4 mx-6 font-ibm tracking-wide">
         <li>
-          <PrismicNextLink href="/" className="relative links">
-            HOME
-          </PrismicNextLink>
+          <Scrambler word="HOME" link="/" />
         </li>
         <li>
-          <PrismicNextLink href="/projects/portfolio" className="relative links">
-            WORKS
-          </PrismicNextLink>
+          <Scrambler word="WORKS" link="/projects/portfolio" />
         </li>
         <li>
-          <PrismicNextLink href="/#contact" className="links">
-            CONTACT
-          </PrismicNextLink>
+          <Scrambler word="CONTACT" link="/#contact" />
         </li>
       </ul>
     </nav>

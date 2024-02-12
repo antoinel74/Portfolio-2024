@@ -4,6 +4,7 @@ import { MarqueeText } from "../components/Marquee";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { PrismicNextLink } from "@prismicio/next";
+import { Scrambler } from "../components/Scrambler";
 
 interface IContact {
   github?: any;
@@ -14,12 +15,6 @@ interface IContact {
 }
 
 gsap.registerPlugin(ScrollTrigger);
-
-const CustomLink = ({ href, text }: { href: any; text: string }) => (
-  <a href={href} className="links">
-    {text}
-  </a>
-);
 
 export const Contact: React.FC<IContact> = (data) => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -55,16 +50,16 @@ export const Contact: React.FC<IContact> = (data) => {
             <span className="opacity-60 font-ibm uppercase">Useful Links:</span>
             <ul className="mt-4 flex flex-col gap-3">
               <li>
-                <CustomLink href={data.github.url} text="Github" />
+                <Scrambler word="Github" link={data.github.url} />
               </li>
               <li>
-                <CustomLink href={data.linkedin.url} text="Linkedin" />
+                <Scrambler word="Linkedin" link={data.linkedin.url} />
               </li>
               <li>
-                <CustomLink href={data.spotify.url} text="Spotify Work Playlist" />
+                <Scrambler word="Spotify" link={data.spotify.url} />
               </li>
               <li>
-                <CustomLink href={data.instagram.url} text="Instagram" />
+                <Scrambler word="Instagram" link={data.instagram.url} />
               </li>
             </ul>
           </li>

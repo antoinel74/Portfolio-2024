@@ -8,9 +8,9 @@ interface IBusyStatus {
 
 export const BusyStatus: FC<IBusyStatus> = ({ title, busy, className }) => {
   return (
-    <div className={`flex items-center gap-2 font-light ${className}`}>
+    <div className={`flex items-center gap-2 ${className}`}>
       <span className={`h-2 w-2 rounded-full ${busy ? "bg-red-500" : "bg-[#BCF604] "}`}></span>
-      <p className="uppercase text-sm font-ibm">{title}</p>
+      <p className="uppercase font-ibm">{title}</p>
     </div>
   );
 };
