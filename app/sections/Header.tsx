@@ -32,7 +32,7 @@ export const Header: React.FC<IHeader> = (data) => {
     <section className="relative min-h-[95vh] w-full overflow-hidden px-4 md:px-6">
       <div className="absolute top-1/4 md:top-[45%] w-full flex flex-col md:flex-row-reverse gap-6 md:gap-0 flex-wrap">
         <h1
-          className="opacity-0 text-[clamp(2rem,3.25vw,3.5rem)] leading-tight flex flex-col w-full md:w-1/2 flex-wrap"
+          className="opacity-0 text-[clamp(2rem,3.15vw,3.5rem)] leading-tight flex flex-col w-full md:w-1/2 flex-wrap"
           ref={titleRef}
           id="main-title"
         >
@@ -53,7 +53,7 @@ export const Header: React.FC<IHeader> = (data) => {
         </h1>
         <div className="flex flex-col gap-6 w-full md:w-1/2 md:items-center opacity-0 y-0" ref={descriptionRef}>
           <div className="w-2/3">
-            {data.description && <p className="max-w-[500px] text-lg font-light">{data.description}</p>}
+            {data.description && <p className="max-w-[500px] md:text-lg font-light">{data.description}</p>}
             <BusyStatus title="open to work" busy={false} className="my-6" />
           </div>
         </div>

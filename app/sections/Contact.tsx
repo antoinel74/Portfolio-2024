@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from "react";
 import { MarqueeText } from "../components/Marquee";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { PrismicNextLink } from "@prismicio/next";
 
 interface IContact {
   github?: any;
@@ -48,10 +49,10 @@ export const Contact: React.FC<IContact> = (data) => {
       ref={sectionRef}
     >
       <MarqueeText content={"Let's connect"} />
-      <div className="flex flex-col-reverse md:flex-row w-full gap-8 py-8 md:py-24 pb-24 px-4 md:px-0">
+      <div className="flex flex-col-reverse md:flex-row w-full gap-8 py-8 px-4 md:px-0">
         <ul className="w-full md:w-1/2 flex flex-col md:items-center text-lg">
           <li>
-            <span className="font-semibold opacity-80">Useful Links:</span>
+            <span className="opacity-60 font-ibm uppercase text-sm">Useful Links:</span>
             <ul className="mt-4 flex flex-col gap-3">
               <li>
                 <CustomLink href={data.github.url} text="Github" />
@@ -72,9 +73,13 @@ export const Contact: React.FC<IContact> = (data) => {
           <p className="flex flex-col text-3xl md:text-4xl font-semibold">
             Let&apos;s Connect !<span>Write me a message</span>
           </p>
-          <a href={data.email.url} className="flex text-2xl md:text-3xl font-thin links" aria-label="Email Address">
+          <PrismicNextLink
+            href={data.email.url}
+            className="flex text-2xl md:text-3xl opacity-60 links block my-4"
+            aria-label="Email Address"
+          >
             antoine.lansman@gmail.com
-          </a>
+          </PrismicNextLink>
         </div>
       </div>
     </section>

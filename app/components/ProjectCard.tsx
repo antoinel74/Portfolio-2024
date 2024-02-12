@@ -47,7 +47,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ year, title, img, uid }) => {
           <figcaption className="absolute top-2 left-2 bg-black rounded-xl px-2 opacity-50 text-white">
             {title}
           </figcaption>
-          <span className="absolute top-2 right-2 bg-black rounded-xl px-2 opacity-50 text-white">{year}</span>
+          <div className="absolute flex items-center gap-1 top-2 right-2 bg-black rounded-xl px-2 opacity-50 text-white">
+            {year}
+            <span className="block h-1 w-1 bg-white rounded-full" />
+          </div>
         </figure>
       </PrismicNextLink>
     </div>

@@ -38,11 +38,13 @@ export const ProjectsGrid: React.FC<IProjectGrid> = ({ projects }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const limitedProjects = projects.slice(0, 4);
+
   return (
     <section className="w-full min-h-screen relative md:px-8" id="works">
-      {projects && (
+      {limitedProjects && (
         <ul className="grid grid-cols-5 grid-rows-2 gap-4 mb-8">
-          {projects.map((item, index) => (
+          {limitedProjects.map((item, index) => (
             <li key={index} className={cardGridPositions(index, isMobile)}>
               <ProjectCard key={index} uid={item.uid} {...item.data} />
             </li>

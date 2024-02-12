@@ -2,8 +2,8 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-white w-full py-8 px-2 md:px-6 flex flex-col gap-2 dark:text-black items-center opacity-70">
-      <span>COPYRIGHT &#174; Back to top</span>
+    <footer className="bg-[#999F9F] font-ibm w-full py-8 pl-4 md:px-0 dark:text-black md:text-center text-xs">
+      <span>COPYRIGHT ANTOINE LANSMAN 2024</span>
     </footer>
   );
 };

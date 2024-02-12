@@ -36,14 +36,14 @@ export const Navbar = () => {
 
   return (
     <nav className="fixed w-full z-10 nav -translate-y-10">
-      <ul className="flex justify-end text-sm gap-12 py-4 mx-6">
+      <ul className="flex justify-end text-sm gap-12 py-4 mx-6 font-ibm tracking-wide">
         <li>
           <PrismicNextLink href="/" className="relative links">
             HOME
           </PrismicNextLink>
         </li>
         <li>
-          <PrismicNextLink href="/projects/cogip" className="relative links">
+          <PrismicNextLink href="/projects/portfolio" className="relative links">
             WORKS
           </PrismicNextLink>
         </li>

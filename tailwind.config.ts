@@ -8,8 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        syne: "'Syne', sans-serif",
+        ibm: "'IBM Plex Mono', monospace",
+      },
       animation: {
-        "spin-slow": "spin 12s linear infinite",
+        "spin-slow": "spin 10s linear infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
