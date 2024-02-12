@@ -1,7 +1,6 @@
 import React from "react";
 import { ProjectDetails } from "@/app/components/ProjectDetails";
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
 import { notFound } from "next/navigation";
 
 type Params = { uid: string };

@@ -75,7 +75,7 @@ export const Contact: React.FC<IContact> = (data) => {
           </p>
           <PrismicNextLink
             href={data.email.url}
-            className="flex text-xl lg:text-2xl opacity-60 links block uppercase my-6"
+            className="flex text-xl lg:text-2xl opacity-60 links block uppercase font-ibm my-6"
             aria-label="Email Address"
           >
             antoine.lansman@gmail.com
