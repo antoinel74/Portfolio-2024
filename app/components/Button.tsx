@@ -8,7 +8,7 @@ interface ButtonProps {
 
 export const Button: React.FC<ButtonProps> = ({ linkText, link }) => {
   return (
-    <PrismicNextLink href={link} className="button px-4 md:px-0 uppercase links">
+    <PrismicNextLink href={link} className="button px-4 md:px-0 uppercase links invert dark:invert-0">
       {linkText}
     </PrismicNextLink>
   );
