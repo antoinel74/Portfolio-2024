@@ -12,3 +12,10 @@ export interface ProjectDetailsProps {
   maxItems: number;
   currentIndex: number;
 }
+
+export interface ProjectCardProps {
+  year: string;
+  title: string;
+  img: any;
+  uid: any;
+}

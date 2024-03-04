@@ -2,16 +2,10 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ProjectCardProps } from "@/customtypes/type";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
 gsap.registerPlugin(ScrollTrigger);
-
-export interface ProjectCardProps {
-  year: string;
-  title: string;
-  img: any;
-  uid: any;
-}
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ year, title, img, uid }) => {
   const ref = useRef<HTMLDivElement>(null);
