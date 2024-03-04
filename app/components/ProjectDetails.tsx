@@ -1,6 +1,8 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { gsap } from "gsap";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { KeyTextField } from "@prismicio/client";
 
@@ -29,6 +31,20 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   maxItems,
   currentIndex,
 }) => {
+  const divRef = useRef<HTMLDivElement>(null);
+  const descRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline({ defaults: { duration: 2, ease: "power3.out" } });
+    tl.set(divRef.current, { opacity: 0, y: 50 }).set(descRef.current, { opacity: 0, y: 50 });
+
+    tl.to([divRef.current, descRef.current], {
+      opacity: 1,
+      y: 0,
+      x: 0,
+    });
+  }, []);
+
   return (
     <section className="project-details relative w-full min-h-screen flex flex-col justify-center md:flex-row md:mt-0 md:items-center">
       <PrismicNextLink href="/" className="fixed top-0 left-6 z-20 p-4 hidden md:inline">
@@ -40,7 +56,7 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
           className="dark:invert hover:scale-95 transition-all"
         />
       </PrismicNextLink>
-      <div className="w-full md:w-1/2 flex flex-col gap-4 mt-24 md:mt-12 px-6 md:px-12">
+      <div className="opacity-0 w-full md:w-1/2 flex flex-col gap-4 mt-24 md:mt-12 px-6 md:px-12" ref={divRef}>
         <h2 className="font-bold uppercase text-5xl">{title}</h2>
 
         {stacks && (
@@ -53,7 +69,11 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
           </div>
         )}
 
-        {description && <p className="my-6 md:h-[250px] text-xl md:overflow-scroll">{description}</p>}
+        {description && (
+          <p className="my-6 md:h-[250px] text-lg md:overflow-scroll" ref={descRef}>
+            {description}
+          </p>
+        )}
 
         {year && (
           <p className="font-semibold py-2">
