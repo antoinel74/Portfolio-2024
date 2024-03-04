@@ -1,23 +1,9 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { gsap } from "gsap";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { KeyTextField } from "@prismicio/client";
-
-export interface ProjectDetailsProps {
-  title: KeyTextField;
-  description: any;
-  year: KeyTextField;
-  img: any;
-  link: any;
-  stacks: any[];
-  prevUID: string;
-  nextUID: string;
-  maxItems: number;
-  currentIndex: number;
-}
+import { ProjectDetailsProps } from "@/customtypes/type";
 
 export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   title,
@@ -36,7 +22,7 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { duration: 2, ease: "power3.out" } });
-    tl.set(divRef.current, { opacity: 0, y: 50 }).set(descRef.current, { opacity: 0, y: 50 });
+    tl.set(divRef.current, { opacity: 0, y: 50 }).set(descRef.current, { opacity: 0, y: 30 });
 
     tl.to([divRef.current, descRef.current], {
       opacity: 1,
@@ -81,9 +67,9 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
           </p>
         )}
         {link && (
-          <Link href={link.url} className="links py-2 font-semibold">
+          <PrismicNextLink href={link.url} className="links py-2 font-semibold">
             See the Github repository &rarr;
-          </Link>
+          </PrismicNextLink>
         )}
       </div>
 
