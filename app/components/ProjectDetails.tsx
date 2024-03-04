@@ -23,7 +23,7 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { duration: 2, ease: "power3.out" } });
-    tl.set(divRef.current, { opacity: 0, y: 50 }).set(descRef.current, { opacity: 0, y: 30 });
+    tl.set(divRef.current, { opacity: 0, y: 50 }).set(descRef.current, { opacity: 0, y: 20 });
 
     tl.to([divRef.current, descRef.current], {
       opacity: 1,
