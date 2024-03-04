@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
-import { PrismicNextLink } from "@prismicio/next";
 import { Scrambler } from "./Scrambler";
 
 export const Navbar = () => {
@@ -12,7 +11,6 @@ export const Navbar = () => {
     tl.set("nav", { y: -50 });
 
     tl.to("nav", {
-      stagger: 0.1,
       y: scrollDirection === "down" ? -50 : 0,
     });
   }, [scrollDirection]);
