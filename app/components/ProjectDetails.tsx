@@ -4,6 +4,7 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { ProjectDetailsProps } from "@/customtypes/type";
+import { ProjectNav } from "./ProjectNav";
 
 export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   title,
@@ -75,15 +76,7 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
 
       <div className="relative w-full md:w-1/2 h-[50vh] md:h-screen flex flex-col justify-center md:items-end gap-4 mt-6 md:mt-0 font-ibm text-sm">
         <PrismicNextImage field={img} fill className="object-cover transition-all" />
-        <div className="absolute top-4 left-4 flex items-center bg-black rounded-full py-1 px-2 opacity-75 z-20">
-          <PrismicNextLink href={`/projects/${prevUID}`} className="hover:scale-105">
-            PREV
-          </PrismicNextLink>
-          <span className="mx-1 flex inline-block">&#124; {`${currentIndex}/${maxItems}`} &#124;</span>
-          <PrismicNextLink href={`/projects/${nextUID}`} className="hover:scale-105">
-            NEXT
-          </PrismicNextLink>
-        </div>
+        <ProjectNav prevUID={prevUID} currentIndex={currentIndex} maxItems={maxItems} nextUID={nextUID} />
       </div>
     </section>
   );

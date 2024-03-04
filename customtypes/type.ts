@@ -19,3 +19,10 @@ export interface ProjectCardProps {
   img: any;
   uid: any;
 }
+
+export interface ProjectNavProps {
+  prevUID: string;
+  currentIndex: number;
+  maxItems: number;
+  nextUID: string;
+}
