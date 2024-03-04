@@ -1,12 +1,9 @@
 import { PrismicNextLink } from "@prismicio/next";
 import React, { useState, useEffect } from "react";
 
-interface Props {
-  word: string;
-  link?: any;
-}
+export const Scrambler = (props: { word: string; link?: any }) => {
+  const { word, link } = props;
 
-export const Scrambler: React.FC<Props> = ({ word, link }) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [scrambledText, setScrambledText] = useState<string>(word);
 
